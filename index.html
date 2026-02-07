@@ -3,143 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>우리의 결혼식에 초대합니다</title>
+<title>Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- GLightbox -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+<!-- Kakao SDK -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Nanum Myeongjo', serif;
-    background: #fff;
-    color: #333;
-    text-align: center;
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  text-align: center;
+  background: #fafafa;
 }
 
-/* 공통 섹션 */
 section {
-    padding: 60px 20px;
+  padding: 60px 20px;
 }
 
-/* 인트로 */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1520857014576-2c4f4c972b57') center/cover no-repeat;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-blend-mode: darken;
-    background-color: rgba(0,0,0,0.3);
+h1, h2 {
+  margin-bottom: 20px;
 }
 
-.hero h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+img {
+  width: 100%;
+  border-radius: 12px;
 }
 
-.hero p {
-    font-size: 16px;
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
 }
 
-/* 인사말 */
-.message {
-    background: #faf7f2;
-    line-height: 1.8;
+.account-box {
+  margin-top: 30px;
 }
 
-/* 신랑신부 */
-.couple img {
-    width: 140px;
-    border-radius: 50%;
-    margin: 15px;
+.account-box button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
 }
 
-/* 갤러리 */
-.gallery img {
-    width: 90%;
-    max-width: 400px;
-    margin: 10px 0;
-    border-radius: 10px;
-}
-
-/* 오시는 길 */
-.location {
-    background: #faf7f2;
-}
-
-/* 버튼 */
-.button {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #c7a17a;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    margin-top: 15px;
-}
-
-/* 푸터 */
-footer {
-    padding: 40px;
-    font-size: 14px;
-    color: #888;
+.kakao-btn {
+  background-color: #FEE500;
+  color: #000;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 배경음악 -->
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_8c9a9a7e9e.mp3" type="audio/mpeg">
-</audio>
-
-<!-- 1. 인트로 -->
-<section class="hero">
-    <h1>김남준 🤍 정하림</h1>
-    <p>2026년 6월 20일 토요일 오후 1시</p>
-    <p>서울 어딘가 웨딩홀</p>
+<!-- 메인 -->
+<section data-aos="fade-up">
+  <h1>저희 결혼합니다 💍</h1>
+  <p>2026년 10월 10일 토요일</p>
 </section>
 
-<!-- 2. 인사말 -->
-<section class="message">
-    <h2>초대합니다</h2>
-    <p>
-        서로 다른 두 사람이 만나<br>
-        사랑으로 하나가 되려 합니다.<br><br>
-        귀한 걸음 하시어<br>
-        저희의 새로운 시작을<br>
-        축복해 주시면 감사하겠습니다.
-    </p>
+<!-- 갤러리 -->
+<section data-aos="fade-up">
+  <h2>Wedding Gallery</h2>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- 사진 예시 -->
+      <div class="swiper-slide">
+        <a href="photo/photo01.jpg" class="glightbox" data-gallery="wedding">
+          <img src="photo/photo01.jpg" loading="lazy">
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="photo/photo02.jpg" class="glightbox" data-gallery="wedding">
+          <img src="photo/photo02.jpg" loading="lazy">
+        </a>
+      </div>
+
+      <!-- 필요하면 계속 추가 -->
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 </section>
 
-<!-- 3. 신랑 신부 -->
-<section class="couple">
-    <h2>신랑 · 신부</h2>
-    <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe" alt="신랑">
-    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="신부">
-    <p>신랑 김남준 / 신부 정하림</p>
+<!-- 계좌번호 -->
+<section data-aos="fade-up">
+  <h2>마음 전하실 곳</h2>
+
+  <div class="account-box">
+    <p>신랑 측</p>
+    <p>국민은행 123-456-789012</p>
+    <button onclick="copyAccount('123-456-789012')">계좌번호 복사</button>
+  </div>
+
+  <div class="account-box">
+    <p>신부 측</p>
+    <p>신한은행 987-654-321000</p>
+    <button onclick="copyAccount('987-654-321000')">계좌번호 복사</button>
+  </div>
+
+  <button onclick="shareKakao()" class="kakao-btn">
+    카카오톡으로 공유하기
+  </button>
 </section>
 
-<!-- 4. 갤러리 -->
-<section class="gallery">
-    <h2>Wedding Gallery</h2>
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
-    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b">
-</section>
+<!-- JS 영역 -->
 
-<!-- 5. 오시는 길 -->
-<section class="location">
-    <h2>오시는 길</h2>
-    <p>서울특별시 강남구 테헤란로 123</p>
-    <a class="button" href="https://map.naver.com" target="_blank">지도 보기</a>
-</section>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
 
-<footer>
-    © 2026 Jaejin & Jungeun Wedding
-</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".swiper", {
+  loop: true,
+  speed: 600,
+  spaceBetween: 20,
+  preloadImages: false,
+  lazy: { loadPrevNext: true },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  }
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+const lightbox = GLightbox({
+  selector: '.glightbox',
+  touchNavigation: true,
+  loop: true,
+  zoomable: true
+});
+</script>
+
+<script>
+function copyAccount(account) {
+  navigator.clipboard.writeText(account);
+  alert("계좌번호가 복사되었습니다 😊");
+}
+</script>
+
+<script>
+Kakao.init('YOUR_JAVASCRIPT_KEY'); // 여기 키 넣기
+
+function shareKakao() {
+  Kakao.Link.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: '저희 결혼합니다 💍',
+      description: '소중한 분들을 초대합니다.',
+      imageUrl: 'https://noondelight.github.io/wedding-invitation/photo/photo01.jpg',
+      link: {
+        mobileWebUrl: window.location.href,
+        webUrl: window.location.href,
+      },
+    },
+    buttons: [
+      {
+        title: '청첩장 보기',
+        link: {
+          mobileWebUrl: window.location.href,
+          webUrl: window.location.href,
+        },
+      },
+    ],
+  });
+}
+</script>
 
 </body>
 </html>
