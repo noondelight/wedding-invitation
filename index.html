@@ -255,3 +255,166 @@
         </div>
     </div>
 </section>
+
+<section class="mint-section">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">Location</div>
+        <div class="card" data-aos="fade-up">
+            <strong>W스퀘어컨벤션 8층 채플홀</strong><br>
+            <span style="font-size:14px; color:#666;">경기도 성남시 분당구 판교역로226번길 16</span>
+            <div id="map"></div>
+            <a href="https://map.kakao.com/link/to/W스퀘어컨벤션,37.400815926297,127.11143462192" target="_blank" class="btn">카카오 네비게이션</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">Account</div>
+        <div style="font-size:14px; color:var(--sub); margin-bottom:25px;" data-aos="fade-up">
+            보내주시는 화환은 정중히 사양하겠습니다.<br>
+            따뜻한 마음만으로도 충분히 감사드립니다.
+        </div>
+
+        <div data-aos="fade-up">
+            <button class="accordion-btn">신랑측 마음 전하실 곳 <span>∨</span></button>
+            <div class="accordion-content">
+                <div class="account-row">
+                    <div>
+                        <span style="font-size:12px; color:#888;">국민은행 (신랑 김남준)</span><br>
+                        <strong>123-456-789012</strong>
+                    </div>
+                    <button class="copy-btn-small" onclick="copyAccount('123-456-789012')">복사</button>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" style="margin-top:10px;">
+            <button class="accordion-btn">신부측 마음 전하실 곳 <span>∨</span></button>
+            <div class="accordion-content">
+                <div class="account-row">
+                    <div>
+                        <span style="font-size:12px; color:#888;">신한은행 (신부 정하림)</span><br>
+                        <strong>987-654-321000</strong>
+                    </div>
+                    <button class="copy-btn-small" onclick="copyAccount('987-654-321000')">복사</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn" style="background:#aaa; margin-top:50px;" onclick="copyURL()">청첩장 주소 복사하기</button>
+    </div>
+</section>
+
+<footer style="padding: 40px 20px; color: #bbb; font-size: 11px;">
+    Copyright 2026. Namjoon & Harim. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=010a8eb9595c3d82b5950d08ff5659f5&libraries=services"></script>
+
+<script>
+    // 1. AOS & GLightbox 초기화
+    AOS.init({ duration: 1000, once: true });
+    const lightbox = GLightbox({ selector: '.glightbox', loop: true });
+
+    // 2. 카카오맵 설정
+    function initMap() {
+        const mapContainer = document.getElementById('map');
+        const mapOption = {
+            center: new kakao.maps.LatLng(37.400815926297, 127.11143462192),
+            level: 3
+        };
+
+        const map = new kakao.maps.Map(mapContainer, mapOption);
+        const marker = new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(37.400815926297, 127.11143462192)
+        });
+        marker.setMap(map);
+
+        // 모바일 대응 리사이즈
+        window.addEventListener('resize', function() {
+            map.relayout();
+            map.setCenter(new kakao.maps.LatLng(37.400815926297, 127.11143462192));
+        });
+    }
+    // 카카오맵 로드 후 실행
+    if (window.kakao && window.kakao.maps) {
+        kakao.maps.load(initMap);
+    }
+
+    // 3. 디데이 및 달력 생성
+    const weddingDate = new Date("2026-05-30");
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const diff = Math.ceil((weddingDate - today) / (1000 * 60 * 60 * 24));
+    document.getElementById("d-day-count").innerText = diff > 0 ? " - " + diff : (diff === 0 ? "Day" : "완료");
+
+    const calYear = 2026, calMonth = 4; // 5월
+    const firstDay = new Date(calYear, calMonth, 1).getDay();
+    const lastDate = new Date(calYear, calMonth + 1, 0).getDate();
+    const calendarWrap = document.getElementById("calendar");
+    
+    ["일","월","화","수","목","금","토"].forEach(d => {
+        const el = document.createElement("div");
+        el.innerHTML = `<strong>${d}</strong>`;
+        calendarWrap.appendChild(el);
+    });
+    for(let i=0; i<firstDay; i++) calendarWrap.appendChild(document.createElement("div"));
+    for(let d=1; d<=lastDate; d++){
+        const el = document.createElement("div");
+        el.textContent = d;
+        if(d === 30) el.classList.add("wedding-day");
+        calendarWrap.appendChild(el);
+    }
+
+    // 4. 복사 기능
+    function copyAccount(acc) {
+        navigator.clipboard.writeText(acc).then(() => alert("계좌번호가 복사되었습니다."));
+    }
+    function copyURL() {
+        navigator.clipboard.writeText(window.location.href).then(() => alert("주소가 복사되었습니다."));
+    }
+
+    // 5. 아코디언 제어
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+            const arrow = this.querySelector('span');
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                arrow.innerText = "∨";
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                arrow.innerText = "∧";
+            }
+        });
+    });
+
+    // 6. 음악 제어
+    const bgm = document.getElementById('bgm');
+    const musicBtn = document.getElementById('musicBtn');
+    let isPlaying = false;
+
+    function toggleMusic() {
+        if (isPlaying) {
+            bgm.pause();
+            musicBtn.innerText = '🔇';
+        } else {
+            bgm.play().catch(() => {});
+            musicBtn.innerText = '💿';
+        }
+        isPlaying = !isPlaying;
+    }
+    musicBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMusic();
+    });
+    document.addEventListener('click', () => {
+        if(!isPlaying) { /* 첫 터치 시 재생 원하면 주석 해제 */ }
+    }, { once: true });
+</script>
+
+</body>
+</html>
