@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>김남준 ♥ 정하림 결혼합니다</title>
 
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js" integrity="sha384-lPhSba9fUr6iaPySpgXad78u7SshX9yGK726n+U9u80+mB440D9e9xZ1L79/G8f8" crossorigin="anonymous"></script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="김남준 ♥ 정하림 결혼합니다">
 <meta property="og:description" content="2026.05.30 SAT 18:30 판교 W스퀘어컨벤션">
 <meta property="og:image" content="photo/hero.jpg"> 
+
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js" integrity="sha384-lPhSba9fUr6iaPySpgXad78u7SshX9yGK726n+U9u80+mB440D9e9xZ1L79/G8f8" crossorigin="anonymous"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
@@ -19,12 +20,9 @@
 <style>
 :root{
   --mint-soft:#eaf7f3;
-  --mint-main:#cfeee6;
   --mint-deep:#2f5d50;
   --ivory:#fbfaf6;
-  --text:#2c2c2c;
   --text-serif:#5a4d4d; 
-  --sub:#666;
   --kakao-yellow:#FEE500;
   --naver-green:#03C75A;
   --tmap-blue:#1e50ff;
@@ -32,43 +30,27 @@
 }
 
 *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
-
-body{
-  margin:0;
-  font-family:'Pretendard', sans-serif;
-  background:var(--ivory);
-  color:var(--text);
-  line-height:1.8;
-  overflow-x: hidden;
-  word-break: keep-all;
-}
+body{ margin:0; font-family:'Pretendard', sans-serif; background:var(--ivory); color:#2c2c2c; line-height:1.8; overflow-x: hidden; word-break: keep-all;}
 
 .music-control {
   position: fixed; top: 15px; right: 15px; z-index: 9999;
   background: rgba(255, 255, 255, 0.8); border-radius: 50%; width: 38px; height: 38px;
-  display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  cursor: pointer; border: none; font-size: 18px;
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: none; font-size: 18px;
 }
 
 section{ padding: 80px 20px; text-align:center; }
 .container{ max-width:480px; margin:auto; }
-.divider { border: none; height: 1px; background-color: #e0e0e0; margin: 0 auto; max-width: 440px; }
 
-/* 히어로 섹션 (샘플 레이아웃) */
+/* 히어로 섹션 */
 .hero-section { padding: 0; background: #fff; }
-.hero-image-wrap { width: 100%; position: relative; }
 .hero-image { width: 100%; height: auto; display: block; }
-.hero-top-text {
-    position: absolute; top: 30px; width: 100%; text-align: center; color: #fff;
-    font-family: var(--font-serif); font-size: 18px; text-shadow: 0 1px 5px rgba(0,0,0,0.3); z-index: 10;
-}
 .hero-info-box {
   background: #fff; padding: 40px 20px 50px; text-align: center; color: var(--text-serif);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.03); position: relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
 }
-.hero-names { font-family: var(--font-serif); font-size: 32px; font-weight: 700; margin-bottom: 25px; letter-spacing: 0.05em; }
-.name-divider { margin: 0 15px; font-weight: 300; color: #ccc; position: relative; top: -2px; }
-.hero-date-loc { font-family: var(--font-serif); font-size: 15px; line-height: 1.8; color: #777; }
+.hero-names { font-family: var(--font-serif); font-size: 32px; font-weight: 700; margin-bottom: 25px; }
+.name-divider { margin: 0 15px; font-weight: 300; color: #ccc; }
+.hero-date-loc { font-family: var(--font-serif); font-size: 15px; color: #777; }
 
 .section-title{ font-family: var(--font-serif); font-size: 26px; margin-bottom:40px; color: var(--text-serif); font-weight: 700; }
 .card{
@@ -76,43 +58,34 @@ section{ padding: 80px 20px; text-align:center; }
   margin-bottom:20px; font-family: var(--font-serif); color: var(--text-serif); line-height: 2;
 }
 
-/* 갤러리 */
+/* 갤러리 및 캘린더 */
 .gallery-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
 .gallery-grid img{ width:100%; aspect-ratio: 1/1; object-fit:cover; border-radius:8px; }
+.calendar{ display:grid; grid-template-columns:repeat(7,1fr); gap:5px; font-size:14px; margin-top:20px; font-family: var(--font-serif); }
+.wedding-day{ background:var(--mint-deep); color:#fff !important; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; margin:auto; }
 
-/* 캘린더 */
-.calendar{ display:grid; grid-template-columns:repeat(7,1fr); gap:5px; font-size:14px; margin-top:20px; font-family: var(--font-serif); color: var(--text-serif); }
-.wedding-day{ background:var(--mint-deep); color:#fff !important; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; margin:auto; font-weight:bold; }
-
-/* 지도 및 3개 버튼 레이아웃 */
+/* 지도 및 길찾기 버튼 */
 #map { width:100%; height:250px; border-radius:15px; margin-top:15px; border:1px solid #eee; }
 .map-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 15px; }
-.map-btn { padding: 12px 0; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard', sans-serif; }
+.map-btn { padding: 12px 0; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Pretendard'; }
 .btn-kakao { background: var(--kakao-yellow); color: #3c1e1e; }
-.btn-naver { background: var(--naver-green); color: #fff; }
-.btn-tmap { background: var(--tmap-blue); color: #fff; }
-
-.transport { text-align: left; margin-top: 25px; font-size: 14px; color: var(--sub); font-family: 'Pretendard', sans-serif; }
-.transport strong { color: var(--text); display: block; margin-bottom: 4px; }
+.btn-naver { background: var(--naver-green); }
+.btn-tmap { background: var(--tmap-blue); }
 
 /* 계좌번호 아코디언 */
 .accordion-btn {
   background: #f8f8f8; padding: 15px 20px; width: 100%; border: none; text-align: left;
-  font-size: 15px; font-weight: 600; border-radius: 12px; display: flex; justify-content: space-between; margin-bottom: 10px; cursor: pointer;
+  font-size: 15px; font-weight: 600; border-radius: 12px; display: flex; justify-content: space-between; margin-bottom: 10px;
 }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-.account-box {
-  background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 12px; margin-bottom: 15px;
-  display: flex; justify-content: space-between; align-items: center; font-family: 'Pretendard', sans-serif;
-}
+.account-box { background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
 .copy-btn { background: var(--mint-soft); color: var(--mint-deep); border: none; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; }
 
 /* 공유하기 버튼 */
 .share-buttons-wrap { display: flex; gap: 10px; margin-top: 40px; }
 .share-btn {
   flex: 1; padding: 15px; border-radius: 12px; border: none; font-size: 15px; font-weight: 600; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 6px; transition: opacity 0.2s;
-  font-family: 'Pretendard', sans-serif;
+  display: flex; align-items: center; justify-content: center; gap: 6px; font-family: 'Pretendard';
 }
 .btn-url { background: #eee; color: #444; }
 .btn-kakao-share { background: var(--kakao-yellow); color: #3b1e1e; }
@@ -128,7 +101,6 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 
 <section class="hero-section">
   <div class="hero-image-wrap">
-      <div class="hero-top-text" data-aos="fade-down">두 사람, 결혼합니다.</div>
       <img src="photo/hero.jpg" alt="메인 사진" class="hero-image">
   </div>
   <div class="hero-info-box" data-aos="fade-up">
@@ -139,16 +111,13 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 
 <section>
   <div class="container">
-    <div class="section-title" data-aos="fade-up">소중한 분들을 초대합니다</div>
+    <div class="section-title" data-aos="fade-up">Invitation</div>
     <div class="card" data-aos="fade-up">
-      서로의 삶에 따뜻한 위로가 되어주며<br>평생을 함께하고 싶은 사람을 만났습니다.<br><br>
-      저희 두 사람의 새로운 시작을<br>함께 축복해주시면 감사하겠습니다.<br><br>
-      김○○ · 이○○ 의 장남 <strong>남준</strong><br>박○○ · 최○○ 의 장녀 <strong>하림</strong>
+      자기야!<br>어제 계속 서운하다고 해서 미안해.<br>노력해준다고 말해줘서 감동이었어.<br>나두 항상 자기 옆에서 노력하는 남편이 될게.<br><br> 
+      호호할미 & 허허할비될 때까지 주님 안에서 잘 살아보자!<br>항상 고맙구 사랑해♥♥♥
     </div>
   </div>
 </section>
-
-<hr class="divider">
 
 <section>
   <div class="container">
@@ -157,21 +126,16 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
       <a href="photo/photo01.jpg" class="glightbox"><img src="photo/photo01.jpg"></a>
       <a href="photo/photo02.jpg" class="glightbox"><img src="photo/photo02.jpg"></a>
       <a href="photo/photo03.jpg" class="glightbox"><img src="photo/photo03.jpg"></a>
-      <a href="photo/photo04.jpg" class="glightbox"><img src="photo/photo04.jpg"></a>
-      <a href="photo/photo05.jpg" class="glightbox"><img src="photo/photo05.jpg"></a>
-      <a href="photo/photo06.jpg" class="glightbox"><img src="photo/photo06.jpg"></a>
     </div>
   </div>
 </section>
 
 <section style="background:var(--mint-soft)">
   <div class="container">
-    <div class="section-title" style="margin-bottom:10px; color: var(--text-serif);">2026.05</div>
+    <div class="section-title" style="margin-bottom:10px;">2026.05</div>
     <div class="card" data-aos="fade-up" style="padding-top:30px;">
         <div id="calendar" class="calendar"></div>
-        <div style="margin-top:30px; font-size: 16px; font-weight:bold; color:var(--mint-deep); font-family: 'Pretendard', sans-serif;">
-            D-Day <span id="d-day-count"></span>
-        </div>
+        <div style="margin-top:30px; font-weight:bold; color:var(--mint-deep);">D-Day <span id="d-day-count"></span></div>
     </div>
   </div>
 </section>
@@ -179,119 +143,113 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 <section>
   <div class="container">
     <div class="section-title" data-aos="fade-up">Location</div>
-    <div class="card" data-aos="fade-up" style="text-align:left; font-family: 'Pretendard', sans-serif;">
+    <div class="card" data-aos="fade-up" style="text-align:left; font-family: 'Pretendard';">
       <strong style="font-size: 18px;">W스퀘어컨벤션 8층 채플홀</strong>
-      <div style="font-size:14px; color:#666; margin-bottom:15px; margin-top: 5px;">경기 성남시 분당구 판교역로226번길 16</div>
+      <div style="font-size:14px; color:#666; margin-bottom:15px;">경기 성남시 분당구 판교역로226번길 16</div>
       
       <div id="map"></div>
       
       <div class="map-btns">
         <a href="https://map.kakao.com/link/to/W스퀘어컨벤션,37.4008159,127.1114346" target="_blank" class="map-btn btn-kakao">카카오맵</a>
-        <a href="https://map.naver.com/v5/entry/place/31289133?c=15,0,0,0,dh" target="_blank" class="map-btn btn-naver">네이버지도</a>
-        <a href="https://apis.openapi.sk.com/tmap/app/routes?appKey=41c76de12d0ee46243227982e1372e89&name=W스퀘어컨벤션&lat=37.4008159&lon=127.1114346" target="_blank" class="map-btn btn-tmap">티맵</a>
-      </div>
-
-      <div class="transport">
-        <div style="margin-bottom:15px"><strong>지하철 안내</strong>판교역(신분당선, 경강선) 1번 출구 도보 10분</div>
-        <div><strong>주차 안내</strong>건물 내 주차장 이용 (2시간 무료)</div>
+        <a href="https://map.naver.com/v5/search/W스퀘어컨벤션" target="_blank" class="map-btn btn-naver">네이버지도</a>
+        <a href="https://tmap.life/39564177" target="_blank" class="map-btn btn-tmap">티맵</a>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="divider">
-
 <section>
   <div class="container">
-    <div class="section-title" data-aos="fade-up">마음 전하실 곳</div>
-    <p data-aos="fade-up" style="font-size:14px; color:var(--sub); margin-bottom:30px; font-family: 'Pretendard', sans-serif;">화환은 정중히 사양하며, 따뜻한 마음 감사히 받겠습니다.</p>
-    <div style="font-family: 'Pretendard', sans-serif;">
-        <button class="accordion-btn">신랑측 계좌번호 <span>∨</span></button>
-        <div class="accordion-content">
-            <div class="account-box"><div><span style="font-size:12px; color:#888">국민은행</span><br><strong>123-456-789012</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
-        </div>
-        <button class="accordion-btn" style="margin-top:10px">신부측 계좌번호 <span>∨</span></button>
-        <div class="accordion-content">
-            <div class="account-box"><div><span style="font-size:12px; color:#888">신한은행</span><br><strong>987-654-321000</strong></div><button class="copy-btn" onclick="copyAccount('987-654-321000')">복사</button></div>
-        </div>
+    <div class="section-title" data-aos="fade-up">Account</div>
+    <button class="accordion-btn">신랑측 계좌번호 <span>∨</span></button>
+    <div class="accordion-content">
+        <div class="account-box"><div><span style="font-size:12px; color:#888">국민은행</span><br><strong>123-456-789012</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
+    </div>
+    <button class="accordion-btn" style="margin-top:10px">신부측 계좌번호 <span>∨</span></button>
+    <div class="accordion-content">
+        <div class="account-box"><div><span style="font-size:12px; color:#888">신한은행</span><br><strong>987-654-321000</strong></div><button class="copy-btn" onclick="copyAccount('987-654-321000')">복사</button></div>
     </div>
 
     <div class="share-buttons-wrap" data-aos="fade-up">
       <button class="share-btn btn-url" onclick="copyUrl()">🔗 URL 복사</button>
-      <button class="share-btn btn-kakao-share" onclick="shareKakao()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C6.477 3 2 6.645 2 11.143C2 13.996 3.79 16.516 6.514 17.96L5.617 21.258C5.556 21.484 5.803 21.666 5.996 21.538L10.024 18.86C10.666 18.947 11.325 18.995 12 18.995C17.523 18.995 22 15.35 22 10.852C22 6.355 17.523 3 12 3Z" fill="#3C1E1E"/></svg>
-        카카오톡 공유
-      </button>
+      <button class="share-btn btn-kakao-share" onclick="shareKakao()">카카오톡 공유</button>
     </div>
   </div>
 </section>
-
-<footer>Copyright 2026. Namjoon & Harim.</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89&autoload=false"></script>
 
 <script>
-  try { Kakao.init('41c76de12d0ee46243227982e1372e89'); } catch(e) {}
+  // 1. 카카오 SDK 초기화 (안전하게 로드 확인 후 실행)
+  window.onload = function() {
+    if (window.Kakao) {
+      if (!Kakao.isInitialized()) {
+        try {
+          // 여기에 고객님의 [JavaScript 키]를 넣으세요
+          Kakao.init('41c76de12d0ee46243227982e1372e89');
+          console.log("카카오 초기화 완료:", Kakao.isInitialized());
+        } catch (e) {
+          console.error("카카오 초기화 중 에러 발생:", e);
+        }
+      }
+    }
+  };
+
   AOS.init({ duration: 1000, once: true });
   GLightbox({ selector: '.glightbox' });
 
   function copyToClipboard(text, msg) {
     const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); alert(msg); } catch (e) { alert("복사 실패"); }
-    document.body.removeChild(ta);
+    document.execCommand('copy'); document.body.removeChild(ta); alert(msg);
   }
   function copyAccount(acc) { copyToClipboard(acc, "계좌번호가 복사되었습니다. 😊"); }
-  function copyUrl() { copyToClipboard(window.location.href, "청첩장 주소가 복사되었습니다. 🔗"); }
+  function copyUrl() { copyToClipboard(window.location.href, "주소가 복사되었습니다. 🔗"); }
 
   function shareKakao() {
-    if (!window.Kakao || !Kakao.isInitialized()) return alert('카카오톡 SDK 초기화 실패');
+    if (!window.Kakao || !Kakao.isInitialized()) {
+      alert('카카오톡 초기화에 실패했습니다. 카카오 개발자 센터에서 [도메인 등록]이 되었는지 확인해 주세요!');
+      return;
+    }
     const url = window.location.href;
     Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
         title: '김남준 ♥ 정하림 결혼합니다',
         description: '2026.05.30(토) 오후 6:30 판교 W스퀘어컨벤션',
-        imageUrl: url + 'photo/hero.jpg', // 현재 도메인 기반 이미지 경로
+        imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000', 
         link: { mobileWebUrl: url, webUrl: url },
       },
       buttons: [{ title: '청첩장 보기', link: { mobileWebUrl: url, webUrl: url } }]
     });
   }
 
+  // 아코디언 로직
   const acc = document.getElementsByClassName("accordion-btn");
   for (let i = 0; i < acc.length; i++) {
     acc[i].onclick = function() {
-      this.classList.toggle("active");
       const panel = this.nextElementSibling;
-      const arrow = this.querySelector('span');
-      if (panel.style.maxHeight) { panel.style.maxHeight = null; arrow.innerText = "∨"; }
-      else { panel.style.maxHeight = panel.scrollHeight + "px"; arrow.innerText = "∧"; }
+      if (panel.style.maxHeight) { panel.style.maxHeight = null; this.querySelector('span').innerText = "∨"; }
+      else { panel.style.maxHeight = panel.scrollHeight + "px"; this.querySelector('span').innerText = "∧"; }
     };
   }
 
-  const musicBtn = document.getElementById('musicBtn');
-  const bgm = document.getElementById('bgm');
-  musicBtn.onclick = () => {
-    if(bgm.paused) { bgm.play(); musicBtn.innerText='💿'; }
-    else { bgm.pause(); musicBtn.innerText='🔇'; }
-  };
-
-  const cal = document.getElementById("calendar");
-  ["일","월","화","수","목","금","토"].forEach(d => cal.innerHTML += `<div><strong>${d}</strong></div>`);
-  const startDay = new Date(2026, 4, 1).getDay();
-  const lastDate = new Date(2026, 5, 0).getDate();
-  for(let i=0; i<startDay; i++) cal.innerHTML += `<div></div>`;
-  for(let d=1; d<=lastDate; d++){ cal.innerHTML += `<div ${d===30?'class="wedding-day"':''}>${d}</div>`; }
-  const dday = Math.ceil((new Date("2026-05-30") - new Date().setHours(0,0,0,0)) / (1000*60*60*24));
-  document.getElementById("d-day-count").innerText = dday > 0 ? dday : "Today";
-
+  // 지도 로드
   kakao.maps.load(() => {
     const loc = new kakao.maps.LatLng(37.4008159, 127.1114346);
     const map = new kakao.maps.Map(document.getElementById('map'), {center: loc, level: 3});
     new kakao.maps.Marker({position: loc}).setMap(map);
   });
+
+  // 캘린더 생성
+  const cal = document.getElementById("calendar");
+  ["일","월","화","수","목","금","토"].forEach(d => cal.innerHTML += `<div><strong>${d}</strong></div>`);
+  const startDay = new Date(2026, 4, 1).getDay();
+  for(let i=0; i<startDay; i++) cal.innerHTML += `<div></div>`;
+  for(let d=1; d<=31; d++){ cal.innerHTML += `<div ${d===30?'class="wedding-day"':''}>${d}</div>`; }
+  const dday = Math.ceil((new Date("2026-05-30") - new Date().setHours(0,0,0,0)) / (1000*60*60*24));
+  document.getElementById("d-day-count").innerText = dday > 0 ? dday : "Today";
 </script>
 </body>
 </html>
